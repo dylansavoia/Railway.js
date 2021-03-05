@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+		<title>Railway</title>
+		<style>
+            * {
+                outline: none;
+            }
+            input::-moz-focus-inner { 
+                border: 0; 
+            }
+			body {
+                margin: 0;
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            #loadscreen {
+                width: 100vw; 
+                height: 100vh; 
+                position: fixed;
+                top: 0; left: 0;
+                background-color: #1b1b1b;
+                z-index: 1000;
+                transition: opacity 0.7s;
+            }
+
+            #loadscreen img {
+                width: 100%; 
+                height: 100%; 
+            }
+
+            #start {
+                position: absolute;
+                font-size: 17px;
+                padding: 15px;
+                top: 50%;
+                left: 50%;
+                margin: -20.5px 0 0 -80px;
+                transition: all 0.2s;
+                width: 160px;
+            }
+
+            h2 {
+                font-weight: bold; 
+                font-size: 20px;
+            }
+
+            #gui {
+                /* display: none; */
+                position: fixed;
+                top: 20px; right: 20px;
+                /* background-color: #1b1b1b;  */
+                background-color: rgba(0, 0, 0, 0.4);
+                color: white;
+                padding: 15px 30px;
+                text-align: center;
+                border-radius: 5px;
+                /* box-shadow: 5px 5px 5px -0.5px #555; */
+            }
+
+            input[type=button] {
+                border: 1px solid #bbb;
+                background-color: transparent;
+                color: white;
+                font-size: 13px;
+                border-radius: 2px;
+                width: 110px;
+                text-align: center;
+                padding: 5px;
+                transition: all .2s;
+                margin: 20px 0;
+                cursor: pointer;
+            }
+
+            input[type=button]:hover {
+                background-color: rgba(255, 255, 255, 0.6);
+                color: black;
+            }
+
+            input[type=button].sel {
+                border: 1px solid #87CEEB;
+                /* background-color: red; */
+            }
+
+		</style>
+	</head>
+	<body>
+		<script src="js/three.min.js"></script>
+        <script>
+        THREE.DefaultLoadingManager.onLoad = function ( ) {
+            console.log( 'Loading Complete!');
+            start.value = "Start";
+            start.disabled = false;
+        };
+        
+        window.addEventListener("load",  () => {
+            add_models(scene);
+            start.onclick = function () {
+                loadscreen.style.opacity = 0;
+                rain_audio.volume = 0;
+                loadscreen.addEventListener("transitionend", () =>{
+                    document.body.removeChild(loadscreen);
+                });
+            }
+        });
+        </script>
+
+		<script src="js/orbitControls.js"></script>
+		<script src="js/LoaderSupport.js"></script>
+		<script src="js/OBJLoader2.js"></script>
+		<script src="js/OBJLoader.js"></script>
+		<script src="js/MTLLoader.js"></script>
+		<script src="js/models_utils.js"></script>
+		<script src="js/models.js"></script>
+		<script src="js/railway.js"></script>
+		<script src="js/animation.js"></script>
+		<script src="js/main.js"></script>
+
+        <div id="loadscreen" >
+            <img src="resources/world.jpg"/>
+            <input id='start' type=button value='Loading...' disabled/>
+        </div>
+
+        <div id="gui">
+            <h2>Train Controls</h2>
+            Speed<br><br>
+            <input id='speed' type='range' min='1' max='5' step='0.5'/>
+            <br>
+            <input id='chgrail' onclick="changeRailway()" type='button' value='Change Track' />
+            <input id='tgl1st' onclick="toggleFirstThirdPerson()" type='button' value='1st Person' />
+			<h2>Environment Controls</h2>
+            <input onclick="toggleDayNight()" type='button' value='Toggle Day' />
+            <input onclick="toggleRain()" type='button' value='Toggle Rain' />   
+            <br>
+            <input id='audio' onclick="toggleAudio()" type='button' value='Enable Audio' />
+        </div>
+        <audio loop  id="train_audio">
+            <source src="resources/train/train.mp3" type="audio/mp3">
+        </audio> 
+        <audio loop  id="rain_audio">
+            <source src="resources/landscape/rain.mp3" type="audio/mp3">
+        </audio> 
+        <audio loop  id="duck_audio">
+            <source src="resources/animals/duck.mp3" type="audio/mp3">
+        </audio> 
+        <audio loop  id="turbine_audio">
+            <source src="resources/train_stuff/turbine.mp3" type="audio/mp3">
+        </audio> 
+        <audio loop  id="eagle_audio">
+            <source src="resources/animals/eagle.mp3" type="audio/mp3">
+        </audio> 
+        <audio loop  id="frog_audio">
+            <source src="resources/animals/frog.mp3" type="audio/mp3">
+        </audio> 
+	</body>
+</html>

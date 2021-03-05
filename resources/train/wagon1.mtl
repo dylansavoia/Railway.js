@@ -1,0 +1,50 @@
+# Blender MTL File: 'None'
+# Material Count: 4
+
+newmtl 11811_Lumber_car_Borders.001
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd 11811_Lumber_car_boards_diff.jpg
+map_Ka 11811_Lumber_car_boards_diff.jpg
+
+newmtl 11811_Lumber_car_Lumber.001
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd 11811_Lumber_car_Lumber_diff.jpg
+map_Ka 11811_Lumber_car_Lumber_diff.jpg
+
+newmtl 11811_Lumber_car_platform.001
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd 11811_Lumber_car_diff.jpg
+map_Ka 11811_Lumber_car_diff.jpg
+
+newmtl 11811_Lumber_car_wheels.001
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd 11811_Lumber_car_wheels_diff.jpg
+map_Ka 11811_Lumber_car_wheels_diff.jpg

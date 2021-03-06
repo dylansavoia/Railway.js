@@ -1,4 +1,4 @@
-# Railway
+# Railway.js
 Computer Graphics project to showcase three.js capabilities.
 The environment is an interactive simple railway model.
 
